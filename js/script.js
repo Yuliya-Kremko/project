@@ -1,26 +1,23 @@
  "use strict";
- 
-const category = 'toys';
-console.log(`https://someurl.com/${category}/5`);
 
-const user = 'Юлия';
-alert(`Привет, ${user}`);
+ const NumberOfFilms = +prompt (`Сколько фильмов вы уже посмотрели?`, ``);
+    
+ const personalMoviDB = {
+     count: NumberOfFilms,
+     movies: {},
+     actors: {},
+     genres: [],
+     privat: false
+ };
+
+ const NameFilms = prompt (`Один из последних просмотренных фильмов?` , ``),
+       GradeFilms = +prompt (`На сколько оцените его?` , ``),
+       NameFilms2 = prompt (`Один из последних просмотренных фильмов?` , ``),
+       GradeFilms2 = +prompt (`На сколько оцените его?` , ``);
+
+personalMoviDB.movies[NameFilms] = GradeFilms;
+personalMoviDB.movies[NameFilms2] = GradeFilms2;
+
+console.log(personalMoviDB);
 
 
-console.log(4 + 5);
-
-let incr = 10,
-    decr = 10;
-// ++incr;
-// --decr;
-
-console.log(++incr);
-console.log(--decr);
-
-console.log(26%9);
-
-console.log(2*4 === 8);
-
-const isChecked = false,
-      isClose = false;
-console.log(isChecked || !isClose);
