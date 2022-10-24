@@ -28,7 +28,8 @@
 // console.log(incr);
 // console.log(decr);
 
-let numberOfFilms = +prompt (`Сколько фильмов вы уже посмотрели?` , ``);
+    const numberOfFilms = +prompt (`Сколько фильмов вы уже посмотрели?` , ``);
+
 
 const personalMovieDB =  {
     count: numberOfFilms,
@@ -38,12 +39,89 @@ const personalMovieDB =  {
     privat: false
 };
 
-let NameFilm1 = prompt (`Один из последних просмотренных фильмов?`, ``);
-let gradeFilms1 = prompt (`На сколько оцените его?` , ``);
-let NameFilm2 = prompt (`Один из последних просмотренных фильмов?`, ``);
-let gradeFilms2 = prompt (`На сколько оцените его?` , ``);
+if (personalMovieDB.count < 10){
+    alert(`Просмотрено довольно мало фильмов`);
+} else if (10 <= personalMovieDB.count <= 30 ){
+    alert ( `Вы классический зритель` );
+} else if ( personalMovieDB.count > 30 ){
+    alert( `Вы киноман` );
+} else {
+    alert ( `Произошла ошибка`);
+}
+//     console.log(personalMovieDB);
 
-    personalMovieDB.movies[NameFilm1] = gradeFilms1;
-    personalMovieDB.movies[NameFilm2] = gradeFilms2;
 
-    console.log(personalMovieDB);
+
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt (`Один из последних просмотренных фильмов?`, ``),
+//           b = prompt (`На сколько оцените его?` , ``);
+
+//     if (a != `` && b != `` && a != null && b != null && a.length < 50 ) {
+//         personalMovieDB.movies[a] = b;
+//         console.log(`done`);
+//     } else {
+//         console.log(`error`);
+//         i--;
+//     }
+// }
+
+let i = 0;
+const a = prompt (`Один из последних просмотренных фильмов?`, ``),
+          b = prompt (`На сколько оцените его?` , ``);
+while ( i < 2) {
+    if (a != `` && b != `` && a != null && b != null && a.length < 50 ) {
+        personalMovieDB.movies[a] = b;
+        console.log(`done`);
+        i++;
+    } else {
+        console.log(`error`);
+        i--;
+    }
+}
+
+
+
+    // let num = 50;
+
+    // while (num <= 55){
+    //     console.log(num);
+    //     num++;
+    // }
+
+    // do {
+    //     console.log(num);
+    //     num++;
+    // }
+    // while (num < 55);
+
+    // for ( let i = 1; i < 8; i++) {
+    //     if ( i === 6) {
+    //     //    break;
+    //     continue;
+    //     }
+    //     console.log(i);
+    // }
+
+    // let result = '';
+    // const lenght = 7;
+
+    // for ( let i = 1; i < lenght ; i++){
+    //     for ( let j = 0; j < i; j++){
+    //         result += '*';
+    //     }
+
+    //     result += '\n';
+    // }
+
+    // console.log(result);
+    
+    // first: for ( let i = 0; i < 3; i++) {
+    //     console.log( `First level: ${i}`);
+    //     for ( let j = 0; j < 3; j++) {
+    //         console.log( `Second level: ${j}`);
+    //         for ( let k = 0; k < 3; k++){
+    //             if( k === 2) continue first; 
+    //             console.log( `Third level: ${k}`);
+    //         }
+    //     }
+    // }
